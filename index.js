@@ -8,11 +8,13 @@ app.use(cors({origin:"*"}));
 app.use(express.json());
 
 const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'Sai123',
-  database: 'banner_db'
+  host: process.env.HOST,
+  user: process.env.USER,
+  password: process.env.PASSWORD,
+  database: process.env.DATABASE
 });
+
+//'banner_db'
 
 db.connect(err => {
   if (err) {
