@@ -4,7 +4,7 @@ const mysql = require('mysql2');
 const app = express();
 require('dotenv').config();
 
-app.use(cors());
+app.use(cors({origin:"https://assignment-frontend-six.vercel.app"}));
 app.use(express.json());
 
 const db = mysql.createConnection({
